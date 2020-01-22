@@ -13,7 +13,7 @@
     "consolidate": "*",
     "dust": "*",
     "dustjs-helpers": "*",
-    "dustjs-linkedin": "*",
+    "dustjs-linkedin": "^2.7.5",
     "express": "*",
     "pg": "*"
   }
