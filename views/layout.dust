@@ -4,6 +4,7 @@
     <title>Recipe Book</title>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="https://kit.fontawesome.com/025244b8da.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">

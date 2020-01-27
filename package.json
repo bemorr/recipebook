@@ -15,7 +15,8 @@
     "dustjs-helpers": "*",
     "dustjs-linkedin": "^2.7.5",
     "express": "*",
-    "pg": "*"
+    "pg": "*",
+    "pg-connection-string": "^2.1.0"
   },
   "devDependencies": {},
   "repository": {
