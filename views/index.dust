@@ -1,32 +1,71 @@
 {>"layout" /}
 	{<body}
         <button type="button" class="btn btn-primary btn-block" data-toggle="modal"
-        data-target="#formModal">
-        </button>
+		data-target="#formModal">
+		Add recipe
+		</button>
+
+		<br/>
+
         {#recipes}
-        <div class="card">
-          <div class="card-body">
-              <h4>{name} 
-              <a class="btn btn-default float-right" 
-                type="button" data-toggle="collapse" href="#recipe_{id}"
-                aria-expanded="false" aria-controls="recipe_{id}">
-                <i class="fas fa-angle-down"></i>
-              </a></h4>
-              <div class="collapse" id="recipe_{id}">
-                  <br></br> 
-                  <br></br>
-                  <p><strong>Ingredients:</strong> {ingredients} </p>
-                  <p><strong>directions:</strong> {directions} </p>
-                  <br></br>
-              <hr>
-                <button class="btn btn-primary edit-recipe">
-					<i class="fas fa-edit"></i>
-				</button>
-				<button class="btn btn-danger delete-recipe" >
-					<i class="fas fa-trash"></i>
-				</button>
-              </div>
-          </div> 
-        </div> 
-        {/recipes}
-    {/body}
+			<div class="card">
+			<div class="card-body">
+				<h4>{name} 
+				<a class="btn btn-default float-right" 
+					type="button" data-toggle="collapse" href="#recipe_{id}"
+					aria-expanded="false" aria-controls="recipe_{id}">
+					<i class="fas fa-angle-down"></i>
+				</a></h4>
+				<div class="collapse" id="recipe_{id}">
+				    <br/> 
+					<br/>
+						<p><strong>Ingredients:</strong> {ingredients} </p>
+						<p><strong>directions:</strong> {directions} </p>
+					<br/>
+				<hr>
+					<button class="btn btn-primary edit-recipe">
+						<i class="fas fa-edit"></i>
+					</button>
+					<button class="btn btn-danger delete-recipe" data-id={id}>
+						<i class="fas fa-trash"></i>
+					</button>
+				</div>
+			   </div> 
+			</div> 
+		{/recipes}
+		<!-- Add form Modal -->
+		<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+			   <form method="post" action="/add">	  
+					<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Add recipe</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label>Recipe name</label>
+							<input type="text" class="form-control"
+							name="name" />
+						</div>
+						<div class="form-group">
+							<label>Ingredients</label>
+							<textarea name="ingredients" class="form-control"></textarea>
+						</div>
+						<div class="form-group">
+							<label>Directions</label>
+							<textarea name="directions" class="form-control"></textarea>
+						</div>
+				    
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<input type="submit" class="btn btn-primary" value="Save" />
+					</div>
+			   </form>
+			  </div>
+			</div>
+		  </div>
+	{/body}
