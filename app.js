@@ -56,10 +56,9 @@ app.post('/add', function(req, res){
     client.connect();
     client
         .query(text, values)
-        .then(result => console.log(result))
+        .then(result => res.redirect("/"))
         .catch(e => console.error(e.stack))
         .then(() => client.end());
-    res.redirect("/");
 })
 
 app.delete("/delete/:id", function (req,res) {
@@ -100,10 +99,10 @@ app.post('/edit', function(req, res){
     client.connect();
     client
         .query(text, values)
-        .then(result => console.log(result))
+        .then(result => res.redirect("/"))
         .catch(e => console.error(e.stack))
         .then(() => client.end());
-    res.redirect('/');
+   
 });
 
 
